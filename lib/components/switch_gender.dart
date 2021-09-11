@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SwitchGender extends StatelessWidget {
+class ChooseGender extends StatelessWidget {
   final String image;
   final Function()? function;
   final String label;
 
-  SwitchGender({this.image = '', this.function,this.label=''});
+  ChooseGender({this.image = '', this.function,this.label=''});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class SwitchGender extends StatelessWidget {
       style: TextButton.styleFrom(backgroundColor: Colors.transparent),
       child: Column(
         children: [
-          SizedBox(height: 60, width: 60, child: Image.asset(image)),
+          SizedBox(height: 80, width: 80, child: Image.asset(image,fit: BoxFit.cover,)),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: Text(

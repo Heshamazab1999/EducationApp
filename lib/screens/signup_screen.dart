@@ -4,6 +4,7 @@ import 'package:untitled3/components/Text_field.dart';
 import 'package:untitled3/components/container_chooser.dart';
 import 'package:untitled3/components/login_button.dart';
 import 'package:untitled3/components/switch_gender.dart';
+import 'package:untitled3/constant.dart';
 import 'package:untitled3/screens/login_screen.dart';
 import 'package:untitled3/utility/utility.dart';
 
@@ -124,14 +125,14 @@ class SignUpScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FadeInRight(
-                  child: SwitchGender(
+                  child: ChooseGender(
                     label: "ذكر",
                     function: () {},
                     image: "assets/images/male.png",
                   ),
                 ),
                 FadeInLeft(
-                  child: SwitchGender(
+                  child: ChooseGender(
                     label: "أنثى",
                     function: () {},
                     image: "assets/images/female.png",
@@ -165,10 +166,7 @@ class SignUpScreen extends StatelessWidget {
                       },
                       child: Text(
                         " دخول ",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.deepOrange,
-                            fontWeight: FontWeight.bold),
+                        style: K.textLoginStyle
                       ),
                     ),
                     Text(

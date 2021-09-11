@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/constant.dart';
 
 class LoginButton extends StatelessWidget {
   final String label;
@@ -18,7 +19,7 @@ class LoginButton extends StatelessWidget {
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
         style: TextButton.styleFrom(
-            backgroundColor: Colors.grey[700],
+            backgroundColor: K.ButtonColor.shade600,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
       ),

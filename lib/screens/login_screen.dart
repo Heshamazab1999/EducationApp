@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/components/Text_field.dart';
 import 'package:untitled3/components/login_button.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:untitled3/constant.dart';
 import 'package:untitled3/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -69,21 +70,17 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SignUpScreen()));
-                      },
-                      child: Text(
-                        " تسجيل",
-                        textDirection: TextDirection.ltr,
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.deepOrange,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpScreen()));
+                        },
+                        child: Text(
+                          " تسجيل",
+                          textDirection: TextDirection.ltr,
+                          style: K.textLoginStyle,
+                        )),
                     Text(
                       "هل لديك ايميل ؟ ",
                       textDirection: TextDirection.rtl,
