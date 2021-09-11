@@ -3,6 +3,7 @@ import 'package:untitled3/components/Text_field.dart';
 import 'package:untitled3/components/login_button.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:untitled3/constant.dart';
+import 'package:untitled3/screens/home_screen.dart';
 import 'package:untitled3/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -58,7 +59,12 @@ class LoginScreen extends StatelessWidget {
                 animate: true,
                 duration: Duration(seconds: 1),
                 child: LoginButton(
-                  function: () {},
+                  function: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => HomeScreen()));
+                  },
                   label: "دخول",
                 ),
               ),

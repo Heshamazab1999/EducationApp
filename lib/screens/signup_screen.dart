@@ -8,7 +8,14 @@ import 'package:untitled3/constant.dart';
 import 'package:untitled3/screens/login_screen.dart';
 import 'package:untitled3/utility/utility.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
+  @override
+  _SignUpScreenState createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  bool isMe = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,15 +134,26 @@ class SignUpScreen extends StatelessWidget {
                 FadeInRight(
                   child: ChooseGender(
                     label: "ذكر",
-                    function: () {},
+                    function: () {
+                      setState(() {
+                        isMe = true;
+                      });
+                    },
                     image: "assets/images/male.png",
+                    color: isMe ? Colors.blueGrey : Colors.transparent,
                   ),
                 ),
                 FadeInLeft(
                   child: ChooseGender(
                     label: "أنثى",
-                    function: () {},
+                    function: () {
+                      setState(() {
+                        isMe = false;
+                      });
+                    },
                     image: "assets/images/female.png",
+                    color: !isMe ? Colors.blueGrey : Colors.transparent,
+
                   ),
                 ),
               ],
@@ -164,10 +182,7 @@ class SignUpScreen extends StatelessWidget {
                             MaterialPageRoute(
                                 builder: (context) => LoginScreen()));
                       },
-                      child: Text(
-                        " دخول ",
-                        style: K.textLoginStyle
-                      ),
+                      child: Text(" دخول ", style: K.textLoginStyle),
                     ),
                     Text(
                       "  بالفعل لديك ايميل ؟ ",
