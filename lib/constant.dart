@@ -46,4 +46,12 @@ class K {
   static const videos = "الفيديوهات";
   static const qr = "رمز الاستجابه";
   static const files = "الملفات";
+  static const name = "الاسم";
+  static const subscription = "الاشتراك الشهرى";
+  static const contact = "التواصل عبر الهاتف";
+  static const whatsApp = "WhatsApp";
+  static const Youtube = "youtube";
+  static const facebook = "Facebook";
+  static const share = "مشاركه البرنامج";
+  static const signOut = "تسجيل الخروج";
 }

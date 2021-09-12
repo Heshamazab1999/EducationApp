@@ -4,9 +4,7 @@ import 'package:untitled3/components/bio_component.dart';
 import 'package:untitled3/components/card.dart';
 import 'package:untitled3/constant.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
-import 'package:untitled3/screens/quiz_screen.dart';
 import 'package:untitled3/utility/utility.dart';
-
 class HomeScreen extends StatelessWidget {
   final List<String> images = [
     "assets/images/quiz.png",
@@ -37,14 +35,14 @@ class HomeScreen extends StatelessWidget {
     "assets/images/logout.png",
   ];
   final List<String> labels = [
-    "الاشتراك الشهرى",
-    "التواصل عبر الهاتف",
-    "كلمه المرور",
-    "WhatsApp",
-    "Youtube",
-    "Facebook",
-    "مشاكه البرنامج",
-    "تسجيل خروج"
+    K.subscription,
+    K.contact,
+    K.password,
+    K.whatsApp,
+    K.Youtube,
+    K.facebook,
+    K.share,
+    K.signOut
   ];
 
   @override
@@ -64,8 +62,7 @@ class HomeScreen extends StatelessWidget {
                 label: label[index],
                 image: images[index],
                 function: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => QuizScreen()));
+
                 },
               )),
       drawer: Padding(
@@ -95,7 +92,7 @@ class HomeScreen extends StatelessWidget {
                     ExpansionTileCard(
                       elevation: 0,
                       title: Text(
-                        "الاسم",
+                        K.name,
                         style: K.textBioStyle,
                       ),
                       children: [
@@ -121,8 +118,10 @@ class HomeScreen extends StatelessWidget {
                         itemBuilder: (BuildContext context, index) =>
                             SocialButton(
                               function: () {
-                                Utility.displayAlertPassword("تعين كلمه المرور", context);
-
+                                Utility.displayAlertVerification(
+                                    "تعين كلمه المرور", (v) {
+                                  print(v);
+                                }, context);
                               },
                               label: labels[index],
                               image: imagesIcon[index],
