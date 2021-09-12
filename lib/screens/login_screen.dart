@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "رقم الهاتف",
+                hint: K.phoneNumber,
                 iconData: Icons.email,
                 textInputType: TextInputType.phone,
               ),
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "كلمه المرور",
+                hint: K.password,
                 iconData: Icons.lock,
                 textInputType: TextInputType.name,
               ),
@@ -60,12 +60,10 @@ class LoginScreen extends StatelessWidget {
                 duration: Duration(seconds: 1),
                 child: LoginButton(
                   function: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomeScreen()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
                   },
-                  label: "دخول",
+                  label: K.enter,
                 ),
               ),
             ),
@@ -83,12 +81,12 @@ class LoginScreen extends StatelessWidget {
                                   builder: (context) => SignUpScreen()));
                         },
                         child: Text(
-                          " تسجيل",
+                          K.signUp,
                           textDirection: TextDirection.ltr,
                           style: K.textLoginStyle,
                         )),
                     Text(
-                      "هل لديك ايميل ؟ ",
+                      K.haveAnAccount,
                       textDirection: TextDirection.rtl,
                       style: TextStyle(fontSize: 18, color: Colors.white),
                     ),

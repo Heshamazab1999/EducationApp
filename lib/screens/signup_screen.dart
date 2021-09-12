@@ -47,7 +47,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "الاسم رباعى بالعربى",
+                hint:K.YourName,
                 iconData: Icons.person,
                 textInputType: TextInputType.name,
               ),
@@ -57,7 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "كلمه المرور",
+                hint: K.password,
                 iconData: Icons.lock,
                 textInputType: TextInputType.name,
               ),
@@ -67,7 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "تأكيد كلمه المرور",
+                hint:K.confirmPassword,
                 iconData: Icons.lock,
                 textInputType: TextInputType.name,
               ),
@@ -77,7 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "رقم الهاتف",
+                hint: K.phoneNumber,
                 iconData: Icons.phone,
                 textInputType: TextInputType.phone,
               ),
@@ -87,44 +87,44 @@ class _SignUpScreenState extends State<SignUpScreen> {
               duration: Duration(seconds: 1),
               child: TextFieldLogin(
                 function: (value) {},
-                hint: "رقم هاتف ولى الامر",
+                hint:K.phoneNumberDad,
                 iconData: Icons.phone,
                 textInputType: TextInputType.phone,
               ),
             ),
             FadeInRight(
               child: ContainerChooser(
-                label: "اختيار السنه الدراسيه",
+                label:K.chooseYourYear,
                 function: () {
                   Utility.displayAlert(
                       "اختيار السنه الدراسيه",
-                      "السنه الاولى",
-                      "السنه الثانيه",
-                      "السنه الثالثه",
-                      "السنه الرابعه",
-                      "السنه الخامسه",
+                      [
+                        "السنه الاولى",
+                        "السنه الثانيه",
+                        "السنه الخامسه",
+                      ],
                       context);
                 },
               ),
             ),
             FadeInLeft(
               child: ContainerChooser(
-                label: "اختيار اسم السنتر",
+                label:K.chooseYourCenter,
                 function: () {
                   Utility.displayAlert(
                       "اختيار السنه الدراسيه",
-                      "السنه الاولى",
-                      "السنه الثانيه",
-                      "السنه الثالثه",
-                      "السنه الرابعه",
-                      "السنه الخامسه",
+                      [
+                        "السنه الاولى",
+                        "السنه الثانيه",
+                        "السنه الخامسه",
+                      ],
                       context);
                 },
               ),
             ),
             BounceInUp(
               child: Text(
-                "اختيار النوع",
+                K.chooseGender,
                 style: TextStyle(fontSize: 22, color: Colors.white),
               ),
             ),
@@ -133,7 +133,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               children: [
                 FadeInRight(
                   child: ChooseGender(
-                    label: "ذكر",
+                    label: K.male,
                     function: () {
                       setState(() {
                         isMe = true;
@@ -145,7 +145,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 FadeInLeft(
                   child: ChooseGender(
-                    label: "أنثى",
+                    label:K.female,
                     function: () {
                       setState(() {
                         isMe = false;
@@ -153,7 +153,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     },
                     image: "assets/images/female.png",
                     color: !isMe ? Colors.blueGrey : Colors.transparent,
-
                   ),
                 ),
               ],
@@ -165,7 +164,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 duration: Duration(seconds: 1),
                 child: LoginButton(
                   function: () {},
-                  label: "تسجيل",
+                  label:K.signUp,
                 ),
               ),
             ),
@@ -182,10 +181,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             MaterialPageRoute(
                                 builder: (context) => LoginScreen()));
                       },
-                      child: Text(" دخول ", style: K.textLoginStyle),
+                      child: Text(K.enter, style: K.textLoginStyle),
                     ),
                     Text(
-                      "  بالفعل لديك ايميل ؟ ",
+                      K.alreadyHaveAccount,
                       style: TextStyle(fontSize: 18, color: Colors.white),
                     ),
                   ],

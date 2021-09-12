@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/constant.dart';
 
 class TextFieldLogin extends StatelessWidget {
   final String? hint;
@@ -17,14 +18,17 @@ class TextFieldLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: TextFormField(
         keyboardType: textInputType,
         textAlign: TextAlign.right,
         onChanged: function,
         controller: controller,
         decoration: InputDecoration(
-            suffixIcon: Icon(iconData),
+            suffixIcon: Icon(
+              iconData,
+              color: K.ButtonColor,
+            ),
             contentPadding: EdgeInsets.symmetric(horizontal: 20),
             filled: true,
             fillColor: Colors.grey[300],

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/constant.dart';
 
 class LoginButton extends StatelessWidget {
-  final String label;
+  final String? label;
   final Function()? function;
-
-  LoginButton({this.label = '', this.function});
+final Color?color;
+  LoginButton({this.label , this.function,this.color=K.ButtonColor});
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +15,11 @@ class LoginButton extends StatelessWidget {
       child: TextButton(
         onPressed: function,
         child: Text(
-          label,
+          label!,
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
         style: TextButton.styleFrom(
-            backgroundColor: K.ButtonColor.shade600,
+            backgroundColor:color,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25))),
       ),

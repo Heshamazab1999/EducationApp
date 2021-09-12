@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/constant.dart';
 
 class ContainerChooser extends StatelessWidget {
   final String label;
@@ -26,6 +27,7 @@ class ContainerChooser extends StatelessWidget {
                 Icon(
                   Icons.keyboard_arrow_down,
                   size: 30,
+                  color: K.ButtonColor,
                 ),
                 Text(
                   label,

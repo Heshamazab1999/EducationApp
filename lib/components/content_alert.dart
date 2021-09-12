@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/constant.dart';
 
 class ContentOfAlert extends StatelessWidget {
-  final String label;
+  final String? label;
   final Function()? function;
 
-  ContentOfAlert({this.label = '', this.function});
+  ContentOfAlert({this.label, this.function});
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: function,
-      title: Center(
-        child: Text(
-          label,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+    return Column(
+      children: [
+        TextButton(
+          onPressed: function,
+          child: Text(
+            label!,
+            style: K.textBioStyle,
+          ),
+          style: TextButton.styleFrom(side: BorderSide.none),
         ),
-      ),
+        Divider(
+          endIndent: 20,
+          indent: 20,
+          color: Colors.black,
+        )
+      ],
     );
   }
 }
